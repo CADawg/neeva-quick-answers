@@ -31,6 +31,12 @@ If you load it on a page with special elements first, go into the localStorage i
 
 Contributions are always welcomed, including additional instant answers. Simply copy an existing one and replace the parts you need to make it work.
 
+### Versions
+
+The script version in the comments at the top should always be updated when a change is made.
+
+The const version should only be updated when the way the HTML is generated has changed (adding new rules does not require this to be updated).
+
 ### Examples of instant answer code
 
 See https://github.com/Snaddyvitch-Dispenser/neeva-quick-answers/blob/main/neevaquickanswers.user.js#L56-L84 for the 2 different formats of instant answers.
