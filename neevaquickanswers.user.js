@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Neeva Quick Answers
 // @namespace    http://tampermonkey.net/
-// @version      1.0.0
+// @version      1.0.1
 // @description  Add duckduckgo-like quick answers to Neeva.
 // @author       Snaddyvitch Dispenser (https://github.com/Snaddyvitch-Dispenser)
 // @match        https://neeva.com/search?q=*
@@ -12,7 +12,7 @@
 // ==/UserScript==
 
 // needs to be incremented each time the HTML changes
-const version = "1.0.0";
+const html_ver = "1.0.0";
 const ENABLE_CACHING = false;
 
 const quickAnswers = [
@@ -130,7 +130,7 @@ async function getQuickAnswer(query) {
         const iAD = window.localStorage.getItem("instantAnswerDetail");
         const div = document.createElement("div");
         div.innerHTML = iAD;
-        if (ENABLE_CACHING && iAD && document.querySelector("[class*=result-group-container__component]").className == iAD.split('"')[1] && savedVersion === version) {
+        if (ENABLE_CACHING && iAD && document.querySelector("[class*=result-group-container__component]").className == iAD.split('"')[1] && savedVersion === html_ver) {
             console.log("QuickAnswers: Using existing container");
             const child = div.querySelector("[data-docid*='0x']")
 
@@ -208,7 +208,7 @@ async function getQuickAnswer(query) {
 
             window.localStorage.setItem("instantAnswerUserIcon", userInfoClone.outerHTML);
             window.localStorage.setItem("instantAnswerDetail", clone.outerHTML);
-            window.localStorage.setItem("instantAnswerVersion", version);
+            window.localStorage.setItem("instantAnswerVersion", html_ver);
 
             let subItemE = userInfoClone.querySelector("[class*='web-index__url']");
             let subItem = subItemE.cloneNode(true);
