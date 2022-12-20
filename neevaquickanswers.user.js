@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Neeva Quick Answers
-// @namespace    http://tampermonkey.net/
+// @namespace    quickanswers.neeva.dbuidl.com
 // @version      1.0.2
 // @description  Add duckduckgo-like quick answers to Neeva.
 // @author       Snaddyvitch Dispenser (https://github.com/Snaddyvitch-Dispenser)
