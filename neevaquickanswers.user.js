@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Neeva Quick Answers
 // @namespace    http://tampermonkey.net/
-// @version      1.0.1
+// @version      1.0.2
 // @description  Add duckduckgo-like quick answers to Neeva.
 // @author       Snaddyvitch Dispenser (https://github.com/Snaddyvitch-Dispenser)
 // @match        https://neeva.com/search?q=*
@@ -13,7 +13,7 @@
 
 // needs to be incremented each time the HTML changes
 const html_ver = "1.0.0";
-const ENABLE_CACHING = false;
+const ENABLE_CACHING = true;
 
 const quickAnswers = [
     {
