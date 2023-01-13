@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Neeva Quick Answers
 // @namespace    quickanswers.neeva.dbuidl.com
-// @version      1.0.2
+// @version      1.0.3
 // @description  Add duckduckgo-like quick answers to Neeva.
 // @author       Snaddyvitch Dispenser (https://github.com/Snaddyvitch-Dispenser)
 // @match        https://neeva.com/search?q=*
@@ -12,7 +12,7 @@
 // ==/UserScript==
 
 // needs to be incremented each time the HTML changes
-const html_ver = "1.0.0";
+const html_ver = "1.0.3";
 const ENABLE_CACHING = true;
 
 const quickAnswers = [
@@ -130,7 +130,7 @@ async function getQuickAnswer(query) {
         const iAD = window.localStorage.getItem("instantAnswerDetail");
         const div = document.createElement("div");
         div.innerHTML = iAD;
-        if (ENABLE_CACHING && iAD && document.querySelector("[class*=result-group-container__component]").className == iAD.split('"')[1] && savedVersion === html_ver) {
+        if (ENABLE_CACHING && iAD && document.querySelector("[class*=result-group-container__component]").className == iAD.split('"')[1].split(" ")[0] && savedVersion === html_ver) {
             console.log("QuickAnswers: Using existing container");
             const child = div.querySelector("[data-docid*='0x']")
 
